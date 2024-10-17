@@ -12,10 +12,11 @@ if (isset($_POST['add_students'])) {
         $query = "INSERT INTO `students`(`first_name`, `last_name`,`age`) VALUES('$fname', '$lname', '$age')";
 
         $result = mysqli_query($connection, $query);
+
         if (!$result) {
             die("Query failed" . mysqli_error($connection));
         } else {
-            header('location:index.php?message=Data inserted successfully');
+            header('location:index.php?insert_msg=Data inserted successfully');
         }
     }
 }

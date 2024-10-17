@@ -71,15 +71,15 @@ if (isset($_GET['insert_msg'])) {
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="from-group">
+                        <div class="form-group">
                             <label for="f_name">First Name</label>
                             <input type="text" class="form-control" name="f_name">
                         </div>
-                        <div class="from-group">
+                        <div class="form-group">
                             <label for="l_name">Last Name</label>
                             <input type="text" class="form-control" name="l_name">
                         </div>
-                        <div class="from-group">
+                        <div class="form-group">
                             <label for="age">Age</label>
                             <input type="text" class="form-control" name="age">
                         </div>
