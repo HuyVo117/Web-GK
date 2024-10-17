@@ -16,6 +16,8 @@ error_reporting(E_ALL);
             <th>FirstName</th>
             <th>LastName</th>
             <th>Age</th>
+            <th>Update</th>
+            <th>Delete</th>
 
         </tr>
     </thead>
@@ -34,6 +36,8 @@ error_reporting(E_ALL);
                     <td> <?php echo $row['first_name']; ?></td>
                     <td> <?php echo $row['last_name']; ?></td>
                     <td> <?php echo $row['age']; ?></td>
+                    <td><a href="update_page_1.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Update</a></td>
+                    <td><a href="delete_page_1.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
 
                 </tr>
         <?php
@@ -56,7 +60,11 @@ if (isset($_GET['insert_msg'])) {
     echo "<h6>" . $_GET['insert_msg'] . "</h6>";
 }
 ?>
-
+<?php
+if (isset($_GET['update_msg'])) {
+    echo "<h6>" . $_GET['update_msg'] . "</h6>";
+}
+?>
 
 <!-- Modal -->
 <form action="insert_data.php" method="post">
@@ -70,21 +78,21 @@ if (isset($_GET['insert_msg'])) {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="f_name">First Name</label>
-                            <input type="text" class="form-control" name="f_name">
-                        </div>
-                        <div class="form-group">
-                            <label for="l_name">Last Name</label>
-                            <input type="text" class="form-control" name="l_name">
-                        </div>
-                        <div class="form-group">
-                            <label for="age">Age</label>
-                            <input type="text" class="form-control" name="age">
-                        </div>
 
-                    </form>
+                    <div class="form-group">
+                        <label for="f_name">First Name</label>
+                        <input type="text" class="form-control" name="f_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">Last Name</label>
+                        <input type="text" class="form-control" name="l_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="text" class="form-control" name="age">
+                    </div>
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
