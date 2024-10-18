@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
 
     $id = $_GET['id'];
 
-    $query = "SELECT * FROM students WHERE id = $id";
+    $query = "SELECT * FROM users WHERE id = $id";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
@@ -30,9 +30,9 @@ if (isset($_POST['update_students'])) {
 
     $fname = $_POST['f_name'];
     $lname = $_POST['l_name'];
-    $age = $_POST['age'];
+    $image_path = $_POST['image_path'];
 
-    $query = "UPDATE students SET first_name = '$fname', last_name = '$lname', age = '$age' WHERE id = '$idnew'";
+    $query = "UPDATE users SET first_name = '$fname', last_name = '$lname', image_path = '$image_path' WHERE id = '$idnew'";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
@@ -46,16 +46,16 @@ if (isset($_POST['update_students'])) {
 
 <form action="update_page_1.php?id_new=<?php echo $id; ?>" method="post">
     <div class="form-group">
-        <label for="f_name">First Name</label>
+        <label for="f_name">Email</label>
         <input type="text" class="form-control" name="f_name" value="<?php echo $row['first_name'] ?>">
     </div>
     <div class="form-group">
-        <label for="l_name">Last Name</label>
+        <label for="l_name">Password</label>
         <input type="text" class="form-control" name="l_name" value="<?php echo $row['last_name'] ?>">
     </div>
     <div class="form-group">
-        <label for="age">Age</label>
-        <input type="text" class="form-control" name="age" value="<?php echo $row['age'] ?>">
+        <label for="image_path">Upload Images</label>
+        <input type="file" class="form-control" name="image_path" value="<?php echo $row['image_path'] ?>">
     </div>
     <input type="submit" class="btn btn-success" name="update_students" value="Update">
 </form>

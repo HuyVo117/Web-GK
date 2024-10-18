@@ -4,12 +4,12 @@ if (isset($_POST['add_students'])) {
 
     $fname = $_POST['f_name'];
     $lname = $_POST['l_name'];
-    $age = $_POST['age'];
+    $image_path = $_POST['image_path'];
 
     if ($fname == "" || empty($fname)) {
         header('loaction:index.php?message= You must enter first name');
     } else {
-        $query = "INSERT INTO `students`(`first_name`, `last_name`,`age`) VALUES('$fname', '$lname', '$age')";
+        $query = "INSERT INTO `users`(`first_name`, `last_name`,`image_path`) VALUES('$fname', '$lname', '$image_path')";
 
         $result = mysqli_query($connection, $query);
 
